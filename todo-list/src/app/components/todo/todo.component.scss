@@ -1,0 +1,56 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+
+  h1 {
+    font-weight: 300;
+    color: #333;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .list-group {
+    margin-top: 20px;
+
+    .list-group-item {
+      background-color: #f9f9f9;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      padding: 15px;
+
+      .task-info {
+        h5 {
+          margin: 0;
+          font-weight: 400;
+        }
+
+        p {
+          margin: 5px 0;
+          color: #666;
+        }
+
+        small {
+          color: #999;
+        }
+      }
+
+      .task-actions {
+        button {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+
+  .edit-form {
+    margin-top: 30px;
+
+    h3 {
+      font-weight: 300;
+      margin-bottom: 15px;
+    }
+  }
+}

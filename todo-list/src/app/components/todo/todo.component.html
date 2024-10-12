@@ -1,0 +1,45 @@
+<div class="container">
+  <h1 class="text-center my-4">Minimal To-Do List</h1>
+
+  <div class="form-group row">
+    <div class="col-4">
+      <input type="text" class="form-control" [(ngModel)]="newTask.title" placeholder="Title" required />
+    </div>
+    <div class="col-6">
+      <input type="text" class="form-control" [(ngModel)]="newTask.description" placeholder="Description" />
+    </div>
+    <div class="col-2 text-end">
+      <button class="btn btn-dark" (click)="createTask()">Add Task</button>
+    </div>
+  </div>
+
+  <ul class="list-group mt-4">
+    <li *ngFor="let task of tasks" class="list-group-item d-flex justify-content-between align-items-center">
+      <div class="task-info">
+        <h5 class="mb-1">{{ task.title }}</h5>
+        <p class="mb-1">{{ task.description }}</p>
+        <small>Status: {{ task.isCompleted ? 'Completed' : 'Pending' }}</small>
+      </div>
+
+      <div class="task-actions">
+        <button class="btn btn-outline-secondary btn-sm me-2" (click)="editTask(task)">Edit</button>
+        <button class="btn btn-outline-danger btn-sm" (click)="deleteTask(task.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+
+  <div *ngIf="editingTask" class="edit-form mt-4">
+    <h3>Edit Task</h3>
+    <div class="form-group row">
+      <div class="col-4">
+        <input type="text" class="form-control" [(ngModel)]="editingTask.title" placeholder="Title" required />
+      </div>
+      <div class="col-6">
+        <input type="text" class="form-control" [(ngModel)]="editingTask.description" placeholder="Description" />
+      </div>
+      <div class="col-2 text-end">
+        <button class="btn btn-dark" (click)="updateTask()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
